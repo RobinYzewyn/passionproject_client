@@ -1,0 +1,234 @@
+{
+    "board": [
+        {
+            "id": 0,
+            "type": "start"
+        },
+        {
+            "id": 1,
+            "type": "property",
+            "details": {
+                "property_id": 1,
+                "name": "Pull-up",
+                "price": 60,
+                "rental_price": 30
+            }
+        },
+        {
+            "id": 2,
+            "type": "card"
+        },
+        {
+            "id": 3,
+            "type": "property",
+            "details": {
+                "property_id": 2,
+                "name": "Push-up",
+                "price": 60,
+                "rental_price": 30
+            }
+        },
+        {
+            "id": 4,
+            "type": "property",
+            "details": {
+                "property_id": 3,
+                "name": "Lat pulldown",
+                "price": 100,
+                "rental_price": 70
+            }
+        },
+        {
+            "id": 5,
+            "type": "station",
+            "details": {
+                "station_id": 1,
+                "name": "Basic Fit",
+                "price": 200,
+                "rental_price": 50
+            }
+        },
+        {
+            "id": 6,
+            "type": "tax",
+            "details": {
+                "tax_id": 2,
+                "name": "Entrance gym",
+                "price": 200
+            }
+        },
+        {
+            "id": 7,
+            "type": "property",
+            "details": {
+                "property_id": 4,
+                "name": "Cable row",
+                "price": 100,
+                "rental_price": 70
+            }
+        },
+        {
+            "id": 8,
+            "type": "property",
+            "details": {
+                "property_id": 4,
+                "name": "Cable row",
+                "price": 100,
+                "rental_price": 70
+            }
+        },
+        {
+            "id": 9,
+            "type": "jail"
+        },
+        {
+            "id": 10,
+            "type": "property",
+            "details": {
+                "property_id": 6,
+                "name": "Skullcrusher",
+                "price": 140,
+                "rental_price": 105
+            }
+        },
+        {
+            "id": 11,
+            "type": "property",
+            "details": {
+                "property_id": 7,
+                "name": "Tricep pushdown",
+                "price": 140,
+                "rental_price": 105
+            }
+        },
+        {
+            "id": 12,
+            "type": "card"
+        },
+        {
+            "id": 13,
+            "type": "property",
+            "details": {
+                "property_id": 8,
+                "name": "Dips",
+                "price": 160,
+                "rental_price": 120
+            }
+        },
+        {
+            "id": 14,
+            "type": "rest"
+        },
+        {
+            "id": 15,
+            "type": "property",
+            "details": {
+                "property_id": 9,
+                "name": "Lateral raise",
+                "price": 180,
+                "rental_price": 125
+            }
+        },
+        {
+            "id": 16,
+            "type": "property",
+            "details": {
+                "property_id": 10,
+                "name": "Shoulder press",
+                "price": 180,
+                "rental_price": 125
+            }
+        },
+        {
+            "id": 17,
+            "type": "card"
+        },
+        {
+            "id": 18,
+            "type": "property",
+            "details": {
+                "property_id": 11,
+                "name": "Upright row",
+                "price": 200,
+                "rental_price": 140
+            }
+        },
+        {
+            "id": 19,
+            "type": "station",
+            "details": {
+                "station_id": 3,
+                "name": "Oxygen",
+                "price": 200,
+                "rental_price": 50
+            }
+        },
+        {
+            "id": 20,
+            "type": "property",
+            "details": {
+                "property_id": 12,
+                "name": "Hammer curl",
+                "price": 220,
+                "rental_price": 150
+            }
+        },
+        {
+            "id": 21,
+            "type": "tax",
+            "details": {
+                "tax_id": 2,
+                "name": "Entrance gym",
+                "price": 200
+            }
+        },
+        {
+            "id": 22,
+            "type": "property",
+            "details": {
+                "property_id": 12,
+                "name": "Reverse curl",
+                "price": 220,
+                "rental_price": 150
+            }
+        },
+        {
+            "id": 23,
+            "type": "to_jail"
+        },
+        {
+            "id": 24,
+            "type": "property",
+            "details": {
+                "property_id": 14,
+                "name": "Squat",
+                "price": 240,
+                "rental_price": 160
+            }
+        },
+        {
+            "id": 25,
+            "type": "property",
+            "details": {
+                "property_id": 15,
+                "name": "Leg curl",
+                "price": 260,
+                "rental_price": 170
+            }
+        },
+        {
+            "id": 26,
+            "type": "card"
+        },
+        {
+            "id": 27,
+            "type": "property",
+            "details": {
+                "property_id": 16,
+                "name": "Hip thrust",
+                "price": 260,
+                "rental_price": 170
+            }
+        }
+    ]
+}
