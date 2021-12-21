@@ -10,7 +10,7 @@ import cards from "../data/cards.json";
 let socket;
 
 export default function Card({room, playerDone}){
-    const CONNECTION_PORT = "https://passionprojectserver.herokuapp.com/"
+    const CONNECTION_PORT = "https://passionproject-server.herokuapp.com/"
   useEffect(() => {
       socket = io(CONNECTION_PORT);
   }, [CONNECTION_PORT]);

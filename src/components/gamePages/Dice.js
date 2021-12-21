@@ -27,7 +27,7 @@ let countNmbr = 10;
 let socket;
 let playSound = false;
 export default function Dice({rolledNumber, room}){
-    const CONNECTION_PORT = "https://passionprojectserver.herokuapp.com/"
+    const CONNECTION_PORT = "https://passionproject-server.herokuapp.com/"
   useEffect(() => {
       socket = io(CONNECTION_PORT);
   }, [CONNECTION_PORT]);

@@ -9,7 +9,7 @@ import player_yellow_icon from "../../assets/player_yellow_icon.svg";
 let socket
 
 export default function Gameheader({money, number, color, room}){
-    const CONNECTION_PORT = "https://passionprojectserver.herokuapp.com/"
+    const CONNECTION_PORT = "https://passionproject-server.herokuapp.com/"
     useEffect(() => {
         socket = io(CONNECTION_PORT);
     }, [CONNECTION_PORT]);

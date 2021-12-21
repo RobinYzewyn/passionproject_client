@@ -20,7 +20,7 @@ let socket;
 let playSound = false;
 let currentlyPlaying = false;
 export default function Game({number, moneyX, color, room, playerAmount, pos1, pos2, pos3, pos4, playerTurn}){
-    const CONNECTION_PORT = "https://passionprojectserver.herokuapp.com/"
+    const CONNECTION_PORT = "https://passionproject-server.herokuapp.com/"
     useEffect(() => {
         socket = io(CONNECTION_PORT);
     }, [CONNECTION_PORT]);

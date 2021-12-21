@@ -1384,7 +1384,7 @@ AR.Detector.prototype.rotate2 = function(src, rotation){
         }
     }
 
-    const CONNECTION_PORT = "https://passionprojectserver.herokuapp.com/"
+    const CONNECTION_PORT = "https://passionproject-server.herokuapp.com/"
   useEffect(() => {
       socket = io(CONNECTION_PORT);
   }, [CONNECTION_PORT]);

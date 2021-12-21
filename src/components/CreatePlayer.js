@@ -21,7 +21,7 @@ let colorArray = ['red', 'blue', 'green', 'yellow'];
 let ableEmitPlayerTurn = true;
 let playSound = false;
 export default function CreatePlayer({room, playerNumber, amountPlayers}){
-    const CONNECTION_PORT = "https://passionprojectserver.herokuapp.com/"
+    const CONNECTION_PORT = "https://passionproject-server.herokuapp.com/"
   useEffect(() => {
       socket = io(CONNECTION_PORT);
   }, [CONNECTION_PORT]);

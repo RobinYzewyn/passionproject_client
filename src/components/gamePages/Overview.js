@@ -10,7 +10,7 @@ import GameEnd from "./GameEnd";
 
 let socket;
 export default function Overview({pos1, pos2, pos3, pos4, showCard, payPlayer, payProperty, payTaxes, playerDone, soldProperty, buyProperty, propertyStatus, price, owner, propertyState, showScreen, rolledNumber, showDice, playerAmount, playerData, room, number, money, color, position, thrower, properties}){
-    const CONNECTION_PORT = "https://passionprojectserver.herokuapp.com/"
+    const CONNECTION_PORT = "https://passionproject-server.herokuapp.com/"
     useEffect(() => {
         socket = io(CONNECTION_PORT);
     }, [CONNECTION_PORT]);
