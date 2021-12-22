@@ -1132,6 +1132,7 @@ AR.Detector.prototype.rotate2 = function(src, rotation){
         for (let i = 0; i < cameras.length; i++) {
           if(cameras[i].label === 'EOS Webcam Utility (0100:0400)'){
             id = i;
+            console.log(cameras);
           }
         }
         //console.log(cameras);
@@ -2715,7 +2716,7 @@ AR.Detector.prototype.rotate2 = function(src, rotation){
         {showAnimationNextPlayer ? <Lottie className={styles.stopwatch_image} options={nextPOptions} style={{width:'100%', position:'absolute', zIndex:5}}/> : ''}
 
         
-        <div className={styles.drawing} style={{opacity: 0}}>
+        <div className={styles.drawing} style={{opacity: 1}}>
           <img className={styles.ring} src={ringSource} alt="img"/>
           <img className={styles.oxygen} src={oxygenSource} alt="img"/>
           <img className={styles.basicfit} src={basicfitSource} alt="img"/>
@@ -2774,7 +2775,7 @@ AR.Detector.prototype.rotate2 = function(src, rotation){
               {playerAmount-1 > 2 ? <canvas ref={gradientP3} style={{background: backgroundP3, opacity: 0.2}} className={styles.playerThree_gradient}></canvas> : ''}
               {playerAmount-1 > 3 ? <canvas ref={gradientP4} style={{background: backgroundP4, opacity: 0.2}} className={styles.playerFour_gradient}></canvas> : ''}
 
-              <div style={{opacity:1}} className={styles.cam1}>
+              <div style={{opacity:.3, position:'absolute', left:'900px', top:'200px'}} className={styles.cam1}>
                 {/* <p style={{color:'white', fontSize:20+'px'}}>P1 {X_P1}/{Y_P1} || {X1_P1}/{Y1_P1}</p> */}
                 {/* <p style={{color:'white'}}>P2 {X_P2}/{Y_P2} || {X1_P2}/{Y1_P2}</p>
                 <p style={{color:'white'}}>P2 {X_P3}/{Y_P3} || {X1_P3}/{Y1_P3}</p>
@@ -2789,7 +2790,7 @@ AR.Detector.prototype.rotate2 = function(src, rotation){
                 <video id="video" autoPlay style={{display: 'none' }}></video>
                 <canvas id="canvas" style={{width:640/1.5+'px', height:480/1.5+'px'}}></canvas>
               </div>
-              <div style={{opacity:1}} className={styles.cam2}>
+              <div style={{opacity:.3, position:'absolute', left:'300px', top:'200px'}} className={styles.cam2}>
 
                 {playerAmount > 3 ? <p className={styles.position}>P3 {pos3}</p> : ''} 
                 {playerAmount > 4 ? <p className={styles.position}>P4 {pos4}</p> : ''} 

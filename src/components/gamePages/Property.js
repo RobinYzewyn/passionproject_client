@@ -47,7 +47,7 @@ export default function Property({payPlayer, payProperty, payTaxes, playerDone, 
                         <div></div>
                     </div>
                     
-                    {propertyStatus === 'available' ? <p className={styles.description}>You landed on the {buyProperty !== '' ? buyProperty : soldProperty}! This one has not yet been sold. Want to buy this one for ${price}?</p> : <p className={styles.description}>You landed on the {buyProperty !== '' ? buyProperty : soldProperty}! This is owned by {owner}. Pay ${price} rent.</p>}
+                    {propertyStatus === 'available' ? <p className={styles.description}>You landed on the {buyProperty !== '' ? buyProperty : soldProperty}! This one is not sold yet. Want to buy this one for ${price}?</p> : <p className={styles.description}>You landed on the {buyProperty !== '' ? buyProperty : soldProperty}! This is owned by {owner}. Pay ${price} rent.</p>}
                     {propertyStatus === 'available' ? <div>
                     <button onClick={playerDone} className={styles.buttonDecline}>No thanks</button>
                     <button onClick={payProperty} className={styles.buttonBuy}>Buy for ${price}</button></div>

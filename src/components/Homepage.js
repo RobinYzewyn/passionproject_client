@@ -63,7 +63,6 @@ export default function Homepage() {
 
     return (
     <div>
-        {/* <BoardInterface /> */}
         {page === '' ? 
         <div className={styles.pageHome}>
             {screenwidth > 999 ? 
