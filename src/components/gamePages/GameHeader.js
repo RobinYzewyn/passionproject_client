@@ -16,7 +16,7 @@ export default function Gameheader({money, number, color, room}){
     const [ableLose, setableLose] = useState(false);
     useEffect(()=>{
         if(money < 1 && ableLose){
-            console.log('game over');
+            // console.log('game over');
             socket.emit('end_game', room)
         }
         if(money > 1000 & !ableLose){

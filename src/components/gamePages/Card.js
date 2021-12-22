@@ -45,7 +45,7 @@ export default function Card({room, playerDone}){
   }
 
   const doAction = () =>{
-    console.log('actie');
+    // console.log('actie');
     playerDone();
 
     socket.emit('doneCard', room);
@@ -53,7 +53,6 @@ export default function Card({room, playerDone}){
 
     return (
       <div>
-        {console.log(pickedCard)}
         <p className={styles.title}>Pick a card</p>
         
         {showTask ? 

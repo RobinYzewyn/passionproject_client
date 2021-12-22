@@ -45,7 +45,7 @@ export default function GameHome({playerAmount, playerData, thrower, money, colo
         }
         updateMoney();
 
-        console.log(playerData);
+        // console.log(playerData);
     }, [playerData])
 
     return (

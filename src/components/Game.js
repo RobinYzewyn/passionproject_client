@@ -52,7 +52,7 @@ export default function Game({number, moneyX, color, room, playerAmount, pos1, p
                 const res = await fet.json();
                 if(data !==  await res[room].players){
                     data = await res[room].players;
-                    console.log(data);
+                    // console.log(data);
                     await setplayerData(data);
                     await checkWhoThrows();
                 }
@@ -120,7 +120,7 @@ export default function Game({number, moneyX, color, room, playerAmount, pos1, p
                         you.skip_throw = false;
                     }
 
-                    console.log(`${index} moet een beurt overslaan`);
+                    // console.log(`${index} moet een beurt overslaan`);
                     data[index].skip_throw = false;
                     data[index].throw = false;
 
@@ -132,11 +132,11 @@ export default function Game({number, moneyX, color, room, playerAmount, pos1, p
                     let nextPlayerName = Object.keys(data)[indexNextKey]
                     let nextPlayer = data[nextPlayerName];
                     if(nextPlayer.skip_throw){
-                        console.log(nextPlayerName + ' moet ook overslaan');
+                        // console.log(nextPlayerName + ' moet ook overslaan');
                         nextPlayer.skip_throw = false;
                     }
                     else {
-                        console.log(nextPlayerName + ' mag gooien');
+                        // console.log(nextPlayerName + ' mag gooien');
                         data[nextPlayerName].throw = true;
                         //Geef worp aan speler
                         playerDone();
@@ -152,11 +152,11 @@ export default function Game({number, moneyX, color, room, playerAmount, pos1, p
                     let nextnextPlayerName = Object.keys(data)[indexNextKey]
                     let nextnextPlayer = data[nextnextPlayerName];
                     if(nextnextPlayer.skip_throw){
-                        console.log(nextnextPlayerName + ' moet ook overslaan');
+                        // console.log(nextnextPlayerName + ' moet ook overslaan');
                         nextnextPlayer.skip_throw = false;
                     }
                     else {
-                        console.log(nextnextPlayerName + ' mag gooien');
+                        // console.log(nextnextPlayerName + ' mag gooien');
                         data[nextnextPlayerName].throw = true;
                         //Geef worp aan speler
                         playerDone();
@@ -258,9 +258,9 @@ export default function Game({number, moneyX, color, room, playerAmount, pos1, p
     const checkPosition = (position) =>{
         let dataBoard = data_board[position];
         let players = data;
-        console.log(dataBoard);
-        console.log(position);
-        console.log(data_board);
+        // console.log(dataBoard);
+        // console.log(position);
+        // console.log(data_board);
 
         setshowScreen(true);
 
@@ -287,7 +287,7 @@ export default function Game({number, moneyX, color, room, playerAmount, pos1, p
                             return;
                         }
                         else{
-                            console.log('Property is van jou');
+                            // console.log('Property is van jou');
                         }
                         return;
                     }
@@ -328,7 +328,7 @@ export default function Game({number, moneyX, color, room, playerAmount, pos1, p
                             return;
                         }
                         else{
-                            console.log('Station is van jou');
+                            // console.log('Station is van jou');
                         }
                         return;
                     }
@@ -376,7 +376,7 @@ export default function Game({number, moneyX, color, room, playerAmount, pos1, p
                             return;
                         }
                         else{
-                            console.log('Company is van jou');
+                            // console.log('Company is van jou');
                         }
                         return;
                     }
@@ -437,7 +437,7 @@ export default function Game({number, moneyX, color, room, playerAmount, pos1, p
             room: room,
             player_data: data,
         }
-        console.log(data);
+        // console.log(data);
         setplayerData(data);
         socket.emit('turnNextPlayer', info);
         
@@ -462,7 +462,7 @@ export default function Game({number, moneyX, color, room, playerAmount, pos1, p
 
     const payPlayer = () =>{
         //Min geld van jezelf
-        console.log(data);
+        // console.log(data);
         let tmp_money = money-price
         setmoney(tmp_money);
         let indexCurrentKey = Object.keys(data)[number]

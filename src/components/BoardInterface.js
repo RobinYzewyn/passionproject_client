@@ -1400,7 +1400,7 @@ AR.Detector.prototype.rotate2 = function(src, rotation){
   const [pos4, setpos4] = useState('start');
 
   useEffect(()=>{
-    console.log('player moved');
+    // console.log('player moved');
     let positionData = {
       room: room,
       data: {
@@ -2426,7 +2426,7 @@ AR.Detector.prototype.rotate2 = function(src, rotation){
     waveActive = true;
     
     const one = () =>{
-      console.log('wave');
+      // console.log('wave');
       if(!waveEffect){return;}
       if(color === 'red'){setcablesSource(cables_r);}
       else if(color === 'blue'){setcablesSource(cables_b);}
@@ -2566,7 +2566,7 @@ AR.Detector.prototype.rotate2 = function(src, rotation){
     socket.on('receive_playerTurn', (playerTurn)=>{
       setturnPlayer(playerTurn);
       if(ableNext){
-        console.log('hierin');
+        // console.log('hierin');
         ableNext = false;
         if(playerTurn === 'Player0'){colorAni = 'red';}
         else if(playerTurn === 'Player1'){colorAni = 'blue';}
@@ -2597,7 +2597,7 @@ AR.Detector.prototype.rotate2 = function(src, rotation){
         waveEffect = false;
         waveActive = false;
         ableNext = true;
-        console.log('stopped walking');
+        // console.log('stopped walking');
         setplayerStatus('SOLID EFFECT');
         if(colorAni === 'red'){setmiddleColor(styles.middleR);setcolorAnimationNextPlayer(nxtP0);setdumbbellsSource(dumbbells_r);setcablesSource(cables_r);setpreacherSource(preacher_r); setbankjesSource(bankjes_r);setringSource(ring_r);setgewichten1Source(gewichten1_r); setgewichten2Source(gewichten2_r); setzak_topSource(zak_top_r); setzak_middenSource(zak_midden_r); setzak_onderSource(zak_onder_r); setyogamatSource(yogamat_r);setbenchpressSource(benchpress_r); setdeadliftSource(deadlift_r);}
         if(colorAni === 'blue'){setmiddleColor(styles.middleB);setcolorAnimationNextPlayer(nxtP1);setdumbbellsSource(dumbbells_b);setcablesSource(cables_b);setpreacherSource(preacher_b); setbankjesSource(bankjes_b);setringSource(ring);setgewichten1Source(gewichten1_b); setgewichten2Source(gewichten2_b); setzak_topSource(zak_top_b); setzak_middenSource(zak_midden_b); setzak_onderSource(zak_onder_b); setyogamatSource(yogamat_b);setbenchpressSource(benchpress_b); setdeadliftSource(deadlift_b);}
@@ -2606,7 +2606,7 @@ AR.Detector.prototype.rotate2 = function(src, rotation){
       }
       const animationDiceDone = () =>{
         
-        console.log('rolled dice')
+        // console.log('rolled dice')
         setplayerStatus('WAVE EFFECT');
         waveEffect = true;
         if(!waveActive){waveFunction(colorAni);}

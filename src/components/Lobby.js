@@ -42,7 +42,7 @@ export default function Lobby({room, amountUsers, creatorJoined, playerNumber}){
     })
 
     socket.on('user_left', ()=>{
-        console.log('user left');
+        //console.log('user left');
         removeJson()
     })
   })

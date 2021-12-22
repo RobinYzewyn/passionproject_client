@@ -47,7 +47,7 @@ export default function Dice({rolledNumber, room}){
   const [playSoundEffect, setplaySoundEffect] = useState(false);
 
   const rollDice = (e) => {
-    console.log('click')
+    // console.log('click')
 
     setclassDice(styles.diceAni)
     const showAni = () =>{
@@ -118,7 +118,7 @@ export default function Dice({rolledNumber, room}){
   }
 
   const countdown = () =>{
-    console.log('timer')
+    // console.log('timer')
     countNmbr = countNmbr-1;
 
     settimerNumb(countNmbr);

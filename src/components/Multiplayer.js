@@ -22,7 +22,7 @@ const useMultiAudio = urls => {
   )
 
   const toggle = targetIndex => () => {
-      console.log('toggle');
+      //console.log('toggle');
     const newPlayers = [...players]
     const currentIndex = players.findIndex(p => p.playing === true)
     if (currentIndex !== -1 && currentIndex !== targetIndex) {
@@ -75,7 +75,6 @@ const MultiPlayer = ({ urls }) => {
     <div>
       {players.map((player, i) => (
         <div key={i}>
-            {console.log(player)}
         <Player key={i} player={player} toggle={toggle(i)} />
         </div>
       ))}

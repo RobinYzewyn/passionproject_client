@@ -67,7 +67,7 @@ export default function QRCodePage(){
     	    body: JSON.stringify(data),
     	})
     	const res2 = await fet2.json();
-    	console.log(res2);
+    	//console.log(res2);
     }
 
 	const closeRoom = () =>{		

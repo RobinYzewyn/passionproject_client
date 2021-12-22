@@ -37,7 +37,7 @@ export default function CreatePlayer({room, playerNumber, amountPlayers}){
     const fetchFunction = async (roomCode) =>{
       const fet = await fetch('https://passionprojectjson.herokuapp.com/data');
       const data = await fet.json();
-      console.log(data);
+      // console.log(data);
     }
     fetchFunction(room)
   }, [])
@@ -135,7 +135,7 @@ export default function CreatePlayer({room, playerNumber, amountPlayers}){
     const [playSoundEffect, setplaySoundEffect] = useState(false);
 
     const getPositionData = (val) =>{
-      console.log(val);
+      // console.log(val);
     }
 
     return (

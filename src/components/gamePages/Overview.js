@@ -32,7 +32,7 @@ export default function Overview({pos1, pos2, pos3, pos4, showCard, payPlayer, p
 
     useEffect(()=>{
         socket.on('user_left', ()=>{
-            console.log('user left');
+            // console.log('user left');
             window.location.reload();
         })
 
@@ -41,9 +41,9 @@ export default function Overview({pos1, pos2, pos3, pos4, showCard, payPlayer, p
         })
 
         socket.on('receive_positiondata', (positions)=>{
-            console.log(positions)
+            // console.log(positions)
             for (let key in positions) {
-            console.log(positions[key]);
+            // console.log(positions[key]);
             switch (positions[key]) {
                 case 'start':
                     positions[key] = 'Start';
