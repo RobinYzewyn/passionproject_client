@@ -16,7 +16,7 @@ import player_yellow_icon from "../../assets/player_yellow_icon.svg";
 
 import styles from "./gamehome.module.css"
 let board = boardJson.board;
-export default function GameHome({playerAmount, playerData, thrower, money, color, number, properties, pos1, pos2, pos3, pos4}){
+export default function GameHome({playerAmount, playerData, thrower, money, color, number, properties, positions}){
 
     const [leaderBoard, setleaderBoard] = useState([]);
 
@@ -113,25 +113,25 @@ export default function GameHome({playerAmount, playerData, thrower, money, colo
                     {playerAmount-1 > 0 ? 
                     <div className={styles.card}>
                         <img alt="exercise" src={player_red_icon}/>
-                        <p>Empty{pos1}</p>
+                        <p>{positions.pos1}</p>
                     </div> : ''}
 
                     {playerAmount-1 > 1 ?
                     <div className={styles.card}>
                         <img alt="exercise" src={player_blue_icon}/>
-                        <p>Empty{pos2}</p>
+                        <p>{positions.pos2}</p>
                     </div> : ''}
                     
                     {playerAmount-1 > 2 ?
                     <div className={styles.card}>
                         <img alt="exercise" src={player_green_icon}/>
-                        <p>Empty{pos3}</p>
+                        <p>{positions.pos3}</p>
                     </div> : ''}
 
                     {playerAmount-1 > 3 ?
                     <div className={styles.card}>
                         <img alt="exercise" src={player_yellow_icon}/>
-                        <p>Empty{pos4}</p>
+                        <p>{positions.pos4}</p>
                     </div> : ''}
                 </div>
             </div>

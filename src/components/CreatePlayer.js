@@ -134,6 +134,10 @@ export default function CreatePlayer({room, playerNumber, amountPlayers}){
     const [soundEffect, setsoundEffect] = useState(TapSound);
     const [playSoundEffect, setplaySoundEffect] = useState(false);
 
+    const getPositionData = (val) =>{
+      console.log(val);
+    }
+
     return (
        <div>
          {playSoundEffect ? <MultiPlayer urls={[soundEffect]}/> : ''}
@@ -169,7 +173,7 @@ export default function CreatePlayer({room, playerNumber, amountPlayers}){
            )
            : 
            <div>
-            <BoardInterface room={room} playerAmount={amountPlayers}/>
+            <BoardInterface room={room} playerAmount={amountPlayers} setPositionData={(val)=>getPositionData(val)}/>
            </div>}
        </div> 
     )

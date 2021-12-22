@@ -126,7 +126,7 @@ let colorAni = 'red';
 let waveActive = false;
 let playSound = false;
 
-export default function BoardInterface({room, playerAmount, playerTurn}){
+export default function BoardInterface({room, playerAmount, playerTurn, setPositionData}){
 
       //=========================================================================================================================================
     /*
@@ -1391,13 +1391,27 @@ AR.Detector.prototype.rotate2 = function(src, rotation){
 
   useEffect(()=>{
     socket.emit('create_room', room);  
+    setpos1('11');
   }, [])
 
   const [pos1, setpos1] = useState('start');
   const [pos2, setpos2] = useState('start');
   const [pos3, setpos3] = useState('start');
-  const [pos4, setpos4] = useState('start    ');
+  const [pos4, setpos4] = useState('start');
 
+  useEffect(()=>{
+    console.log('player moved');
+    let positionData = {
+      room: room,
+      data: {
+      pos1: pos1,
+      pos2: pos2,
+      pos3, pos3,
+      pos4, pos4}
+    }
+    //setPositionData(positionData);
+    socket.emit('changePositionData', positionData)
+  }, [pos1, pos2, pos3, pos4])
 
 
   const gradientP1 = useRef(null);
@@ -2697,16 +2711,9 @@ AR.Detector.prototype.rotate2 = function(src, rotation){
         {playSoundEffect ? <MultiPlayer urls={[soundEffect]}/> : ''}
         {showMoneyAnimation ? <div><Lottie className={styles.stopwatch_image} options={boardMoney} style={{height:'100%', position:'absolute', zIndex:5, left:0}}/><Lottie className={styles.stopwatch_image} options={boardMoney} style={{height:'100%', position:'absolute', zIndex:5, left:'50%'}}/></div> : ''}
         {showJailAnimation ? <Lottie className={styles.stopwatch_image} options={boardJail} style={{width:'100%', position:'absolute', zIndex:5}}/> : ''}
-        {showDiceAnimation ? <Lottie className={styles.stopwatch_image} options={boardDice} style={{width:'100%', position:'absolute', zIndex:5}}/> : ''}
+        {showDiceAnimation ? <Lottie className={styles.stopwatch_image} options={boardDice} style={{width:'100%', position:'absolute', zIndex:5, left:'40px', top:'40px'}}/> : ''}
         {showAnimationNextPlayer ? <Lottie className={styles.stopwatch_image} options={nextPOptions} style={{width:'100%', position:'absolute', zIndex:5}}/> : ''}
-        <div className={styles.rdndf}>
-          <p>Turn: {turnPlayer}</p>
-          <p>Status: {playerStatus}</p>
-          {/* <p>Player 1 {pos1}</p>
-          <p>Player 2 {pos2}</p>
-          <p>Player 3 {pos3}</p>
-          <p>Player 4 {pos4}</p> */}
-        </div>
+
         
         <div className={styles.drawing} style={{opacity: 1}}>
           <img className={styles.ring} src={ringSource} alt="img"/>
@@ -2794,17 +2801,17 @@ AR.Detector.prototype.rotate2 = function(src, rotation){
                <div className={stylesDesign.zero}><img src={board_start} alt="start"/></div>
                 <div className={stylesDesign.one}><section><p>$60</p><p>Pull-up</p></section><div></div></div>
                 <div className={stylesDesign.two}><img className={stylesDesign.kettlebellTop} alt="card" src={kettlebell}/></div>
-                <div className={stylesDesign.three}><section><p>$60</p><p>Push-up</p></section><div></div></div>
-                <div className={stylesDesign.four}><section><p>$100</p><p>Lat pulldown</p></section><div></div></div>
+                <div className={stylesDesign.three}><section><p>$60</p><p>Preacher curl</p></section><div></div></div>
+                <div className={stylesDesign.four}><section><p>$100</p><p>Push-up</p></section><div></div></div>
                 <div className={stylesDesign.five}><img className={stylesDesign.stationTop} src={station} alt="station"/></div>
                 <div className={stylesDesign.six}><p>$200</p><p>Taxes</p><img className={stylesDesign.moneybagTop} src={moneybag} alt="money bag"/></div>
-                <div className={stylesDesign.seven}><section><p>$100</p><p>Cable row</p></section><div></div></div>
+                <div className={stylesDesign.seven}><section><p>$100</p><p>Landmine row</p></section><div></div></div>
                 <div className={stylesDesign.eight}><section><p>$100</p><p>Bent over row</p></section><div></div></div>
                 <div className={stylesDesign.nine}><img className={stylesDesign.jail} src={board_jail} alt="jail"/></div>
-                <div className={stylesDesign.ten}><div></div><section><p>Skullcrusher</p><p>$140</p></section></div>
-                <div className={stylesDesign.eleven}><div></div><section><p>Rope pushdown</p><p>$140</p></section></div>
+                <div className={stylesDesign.ten}><div></div><section><p>Benchpress</p><p>$140</p></section></div>
+                <div className={stylesDesign.eleven}><div></div><section><p>Squat</p><p>$140</p></section></div>
                 <div className={stylesDesign.twelve}><img className={stylesDesign.kettlebellRight} alt="card" src={kettlebell}/></div>
-                <div className={stylesDesign.thirteen}><div></div><section><p>Tricep dips</p><p>$160</p></section></div>
+                <div className={stylesDesign.thirteen}><div></div><section><p>Deadlift</p><p>$160</p></section></div>
                 <div className={stylesDesign.fourteen}><img src={board_bed} alt="bed"/></div>
                 <div className={stylesDesign.fifteen}><div></div><section><p>Lateral raise</p><p>$180</p></section></div>
                 <div className={stylesDesign.sixteen}><div></div><section><p>Shoulder press</p><p>$180</p></section></div>
@@ -2815,10 +2822,10 @@ AR.Detector.prototype.rotate2 = function(src, rotation){
                 <div className={stylesDesign.twentyone}><img className={stylesDesign.moneybagBottom} src={moneybag} alt="money bag"/><p>Taxes</p><p>$200</p></div>
                 <div className={stylesDesign.twentytwo}><div></div><section><p>Reverse curl</p><p>$220</p></section></div>
                 <div className={stylesDesign.twentythree}><img src={board_tojail} alt="to jail"/></div>
-                <div className={stylesDesign.twentyfour}><section><p>Squat</p><p>$240</p></section><div></div></div>
-                <div className={stylesDesign.twentyfive}><section><p>Leg curl</p><p>$260</p></section><div></div></div>
+                <div className={stylesDesign.twentyfour}><section><p>Cable flyes</p><p>$240</p></section><div></div></div>
+                <div className={stylesDesign.twentyfive}><section><p>Cable kickback</p><p>$260</p></section><div></div></div>
                 <div className={stylesDesign.twentysix}><img className={stylesDesign.kettlebellLeft} alt="card" src={kettlebell}/></div>
-                <div className={stylesDesign.twentyseven}><section><p>Hip thrust</p><p>$260</p></section><div></div></div>
+                <div className={stylesDesign.twentyseven}><section><p>Rope pulldown</p><p>$260</p></section><div></div></div>
            </div>
            <script src="../scripts/script.js"></script>
        </div> 
